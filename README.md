@@ -1,6 +1,6 @@
 ## SOFL
 
-Making easier to store functions and js objects with functions in local/sessionStorge
+Making it easier to store functions and js objects with functions in local/sessionStorge
 ```bash
   npm install sofl
 ```
@@ -43,4 +43,31 @@ const result = SOFL.localStorage.getItemAndParse("foo");
 
 // it works! :)
 result.sum(2,5);
+```
+#### Support nested objects
+```javascript
+import SOFL from "sofl";
+
+const randomObject = {
+  nested1: {
+    nested2: {
+      nested3: [
+        {
+          nested4: () => {
+            console.log("Hi mom!");
+          },
+        },
+      ],
+    },
+  },
+};
+
+// stringify and set item
+SOFL.localStorage.stringifyAndSetItem("foo", randomObject);
+
+// get item and parse
+const result = SOFL.localStorage.getItemAndParse("foo");
+
+// try it out yourself ;)
+result.nested1.nested2.nested3[0].nested4();
 ```
