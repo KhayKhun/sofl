@@ -1,6 +1,6 @@
 {
   "name": "sofl",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Store javascript objects with functions in localStorage",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,11 @@
     "type": "git",
     "url": "https://github.com/khaykhun/sofl"
   },
-  "author": "",
+  "keywords": [
+    "sofl",
+    "localStorage",
+    "sessionStorage"
+  ],
+  "author": "KhayKhun",
   "license": "MIT"
 }
