@@ -2,7 +2,7 @@
 
 Making it easier to store functions and js objects with functions in local/sessionStorge
 ```bash
-  npm install sofl
+npm install sofl
 ```
 Or just copy the codes from [index.js](https://github.com/KhayKhun/sofl/blob/main/index.js)
 #### Import
@@ -28,21 +28,22 @@ SOFL.sessionStorage.getItemAndParse("myitem");
 import SOFL from "sofl";
 
 const exampleData = {
-  name: "John",
-  age: 17,
-  sum: (x,y) => {
-    console.log(x+y);
+  string: "John",
+  number: 17,
+  date: new Date(),
+  sumFunc: (x, y) => {
+    console.log(x + y);
   },
 };
 
 // stringify and set item
-SOFL.localStorage.stringifyAndSetItem("foo", exampleData);
+const stringifiedResult = SOFL.localStorage.stringifyAndSetItem("foo", exampleData);
+console.log(stringifiedResult);
 
 // get item and parse
 const result = SOFL.localStorage.getItemAndParse("foo");
-
-// it works! :)
-result.sum(2,5);
+console.log(result);
+result.sumFunc(2, 5); // 7
 ```
 #### Support nested objects
 ```javascript
@@ -50,7 +51,10 @@ import SOFL from "sofl";
 
 const randomObject = {
   nested1: {
+    date: new Date(),
+    bool: true,
     nested2: {
+      string: "foo",
       nested3: [
         {
           nested4: () => {
@@ -63,11 +67,11 @@ const randomObject = {
 };
 
 // stringify and set item
-SOFL.localStorage.stringifyAndSetItem("foo", randomObject);
-
+const stringifiedData = SOFL.localStorage.stringifyAndSetItem("foo", randomObject);
 // get item and parse
 const result = SOFL.localStorage.getItemAndParse("foo");
 
 // try it out yourself ;)
+console.log(result);
 result.nested1.nested2.nested3[0].nested4();
 ```

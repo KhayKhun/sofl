@@ -1,6 +1,6 @@
 {
   "name": "sofl",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Store javascript objects with functions in localStorage",
   "main": "index.js",
   "scripts": {
