@@ -1,6 +1,6 @@
 ## SOFL
 
-Making it easier to store date, functions, and objects in local/sessionStorge
+Making it easier to store dates, functions, and objects in local/sessionStorge
 ```bash
 npm install sofl
 ```
